@@ -15,17 +15,14 @@ browser = webdriver.Chrome(executable_path='/Library/Application Support/Google/
 browser.get("https://github.com/TheDancerCodes")
 
 # Wait 20 seconds for page to load
-timeout = 20
+timeout = 10
+browser.set_page_load_timeout(timeout)
 try:
     
     WebDriverWait(browser, timeout).until(EC.visibility_of_element_located((By.XPATH, "//img[@class='avatar width-full rounded-2']")))
 except TimeoutException:
     print("Timed out waiting for page to load")
     browser.quit()
-
-# Get all of the titles for the pinned repositories
-# We are not just getting pure titles but we are getting a selenium object
-# with selenium elements of the titles.
 
 # find_elements_by_xpath - Returns an array of selenium objects.
 titles_element = browser.find_elements_by_xpath("//a[@class='text-bold']")
