@@ -17,9 +17,7 @@ browser.get("https://github.com/TheDancerCodes")
 # Wait 20 seconds for page to load
 timeout = 20
 try:
-    # Wait until the final element [Avatar link] is loaded.
-    # Assumption: If Avatar link is loaded, the whole page would be relatively loaded because it is among
-    # the last things to be loaded.
+    
     WebDriverWait(browser, timeout).until(EC.visibility_of_element_located((By.XPATH, "//img[@class='avatar width-full rounded-2']")))
 except TimeoutException:
     print("Timed out waiting for page to load")
