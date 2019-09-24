@@ -56,8 +56,6 @@ def scrapper(url):
         try:
             print("try of if worked")
             r = requests.get(web, headers=headers)
-            # req = urllib.request.Request(url, headers=headers)
-            # r = urllib.request.urlopen(req)
             url = web
             result[
                 'message'] = 'Félicitations. Votre site les données transitants par votre site sont sécurisées avec un certificat SSL'
@@ -149,8 +147,8 @@ def scrapper(url):
         try:
             meta_tag = soup.find("meta", {"name": "description"})
             desc_content = meta_tag['content']
-            desc_text_ln = len(desc_content)
-            # desc_text_ln = int(desc_text_ln)
+            #desc_text_ln = len(desc_content)
+            desc_text_ln = int(desc_text_ln)
 
             if desc_text_ln < 150:
                 result = {
@@ -400,8 +398,8 @@ def scrapper(url):
                 result_dict['google_safe_browsing'] = result
 
             # This is for row 10 (responsive website test)
-            name = 'responsive_test'
-            length_var_name = 'responsive_test_desc'
+            #name = 'responsive_test'
+            #length_var_name = 'responsive_test_desc'
             try:
                 meta_tag = soup.find("meta", {"name": "viewport"})
                 lang_text = meta_tag['content']
