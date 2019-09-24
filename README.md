@@ -1,2 +1,2 @@
-# Web-scraping_python
+# Web & data scraping with Python or Java
 # Selenium & BeautifulSoup & Scrapy
